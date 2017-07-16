@@ -8,35 +8,42 @@ $main_color: #f1513c;
 /* LAYOUT */
 
 body {
-    font-family: 'Source Sans Pro', sans-serif;
     background-color: #f2f2f2;
-    color: #585858;
-    line-height:1.5em;
+    color: #333;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.5em;
+    font-size: 18px;
 }
 
 #header {
     display: block;
-    padding: 50px;
+    padding: 80px 20px;
     @include shadow(1);
     background-color: $main_color;
+    color: #fff;
     text-align: center;
 
-    h1 {
-        font-size: 48px;
-        color: #fff;
+    img {
+        margin-bottom: 25px;
     }
 
     h2 {
         font-size: 28px;
-        color: #fff;
+        font-style: italic;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+
+    p {
+        text-transform: uppercase;
         font-style: italic;
     }
 }
 
-#content, #infos {
-    h1, h2 {
-        color: #333;
-    }
+.content {
+    padding: 50px;
 
     h1 {
         font-size: 28px;
@@ -45,83 +52,86 @@ body {
     h2 {
         font-size: 22px;
     }
+
+    &:nth-child(odd) {
+        background-color: #333;
+        color: #fff;
+    }
 }
 
-#screenshot {
-    display: block;
-    margin: 0 auto;
-    
-}
+.idea {
+    display: inline-block;
+    vertical-align: middle;
+    width: 150px;
+    margin: 20px 35px 0 20px;
+    padding: 25px 40px;
+    border-radius: 4px;
+    background-color: #fff;
+    @include shadow(1);
+    transition: all 0.5s ease;
 
-#content {
-    padding: 50px;
-}
+    i {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 64px;
+    }
 
-#infos {
-    padding: 50px;
-    background-color: #c3c3c3;
-}
+    p {
+        margin-bottom: 0;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
 
-#ideas {
-    margin-bottom: 25px;
-
-    .idea {
-        display: inline-block;
-        vertical-align: top;
-        margin: 20px 35px 0 20px;
-        padding: 25px 40px;
-        border-radius: 4px;
-        background-color: #fff;
-        @include shadow(1);
-
-        p {
-            margin-bottom: 0;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        &:hover {
-            @include shadow(2);
-        }
+    &:hover {
+        @include shadow(2);
     }
 }
 
 #footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 30px 50px;
-    background-color: darken($main_color, 35);
+    background-color: #000;
     color: #fff;
-
-    img {
-        margin-bottom: 0;
-    }
-
-    span {
-        float: right;
-        margin-top: 10px;
-    }
 }
 
 /* BUTTONS */
 
 button {
-    height: 50px;
-    margin: 20px;
-    padding: 0 20px;
-    border: none;
-    border-radius: 24px;
-    background-color: #df835c;
-    color: #fff;
+    padding: 20px 30px;
+    border: 3px solid #fff;
+    border-radius: 50px;
+    background-color: inherit;
+    color: inherit;
     text-transform: uppercase;
+    font-weight: bold;
     @include shadow(1);
     cursor: pointer;
+    transition: all 0.5s ease;
 
     &:hover {
-        background: darken($main_color, 5);
+        background-color: #fff;
+        color: $main_color;
         @include shadow(2);
+    }
+
+    &.darken {
+        border-color: #333;
+
+        &:hover {
+            background-color: #333;
+            color: #fff;
+        }
     }
 }
 
 /* TEXT */
+
+h1, h2 {
+    margin-bottom: 25px;
+    font-family: 'PT Sans', sans-serif;
+}
 
 p {
     margin-bottom: 15px;
@@ -137,17 +147,6 @@ a {
 
 b {
     font-weight: bold;
-}
-
-/* MARGINS */
-
-img {
-    margin-bottom: 25px;
-}
-
-h1, h2 {
-    margin: 15px 0;
-    font-family: 'PT Sans', sans-serif;
 }
 
 /* HELPERS */
