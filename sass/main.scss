@@ -8,6 +8,9 @@ $main_color: #f1513c;
 /* LAYOUT */
 
 body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background-color: #f2f2f2;
     color: #333;
     font-family: 'Source Sans Pro', sans-serif;
@@ -15,14 +18,26 @@ body {
     font-size: 18px;
 }
 
+#site-content {
+    flex: 1;
+}
+
 #header {
     display: block;
     text-align: center;
 
     #header-main {
-        padding: 50px 20px 200px 20px;
+        padding: 50px 20px;
         background-color: $main_color;
         color: #fff;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: darken(#fff, 5);
+            }
+        }
     }
 
     #header-screenshot {
@@ -55,7 +70,7 @@ body {
 }
 
 .content {
-    padding: 50px;
+    padding: 50px 15%;
 
     h1 {
         font-size: 28px;
@@ -103,7 +118,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 50px;
+    padding: 30px 15%;
     background-color: #000;
     color: #fff;
 }
@@ -159,6 +174,14 @@ a {
 
 b {
     font-weight: bold;
+}
+
+ul {
+    margin-left: 40px;
+
+    li {
+        list-style: disc;
+    }
 }
 
 /* HELPERS */
