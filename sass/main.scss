@@ -17,13 +17,21 @@ body {
 
 #header {
     display: block;
-    padding: 80px 20px;
-    @include shadow(1);
-    background-color: $main_color;
-    color: #fff;
     text-align: center;
 
-    img {
+    #header-main {
+        padding: 50px 20px 200px 20px;
+        background-color: $main_color;
+        color: #fff;
+    }
+
+    #header-screenshot {
+        margin-top: -150px;
+        border-radius: 2px;
+        @include shadow(2);
+    }
+
+    #header-logo {
         margin-bottom: 25px;
     }
 
