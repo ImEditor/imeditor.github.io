@@ -58,7 +58,7 @@ body {
         font-style: italic;
     }
 
-    button {
+    #header-button {
         margin-bottom: 10px;
     }
 
@@ -125,30 +125,32 @@ body {
 
 /* BUTTONS */
 
-button {
-    padding: 20px 30px;
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
     border: 3px solid #fff;
     border-radius: 50px;
-    background-color: inherit;
-    color: inherit;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 16px;
     @include shadow(1);
-    cursor: pointer;
     transition: all 0.5s ease;
+    text-decoration: none;
+    cursor: pointer;
 
     &:hover {
         background-color: #fff;
-        color: $main_color;
+        color: $main_color !important;
         @include shadow(2);
     }
 
-    &.darken {
+    &.btn-dark {
         border-color: #333;
+        color: #333;
 
         &:hover {
             background-color: #333;
-            color: #fff;
+            color: #fff !important;
         }
     }
 }
