@@ -41,13 +41,13 @@ body {
     }
 
     #header-screenshot {
-        height: 509px;
-        width: 806px;
-        margin: -150px auto 0 auto;
-        border-radius: 10px;
-        @include shadow(2);
-        background-image: url('../img/imeditor-screenshot.png');
-        background-size: cover;
+        margin: 0 20px;
+
+        img {
+            margin: -150px auto 0 auto;
+            border-radius: 10px;
+            @include shadow(2);
+        }
     }
 
     #header-logo {
@@ -200,4 +200,9 @@ code {
 
 .align-center {
     text-align: center;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
 }
